@@ -1,8 +1,7 @@
 1) To create eks cluster using terraform , cd into direcotry eks-terraform and run command 
 terraform apply -var="eks_nodes_desired_size=2" , this can be changed a per requirement.
 
-2) The express directory contains the Dockerfile we can build the docker image by cd into express directory using 
-docker build -t public.ecr.aws/l7l7a2r1/images:node 
+2) The express directory contains the Dockerfile ,  we will copy the Dockerfile directory containing cod and  we can build the docker image by cd into express directory using  docker build -t public.ecr.aws/l7l7a2r1/images:node 
 
 3) We will deploy the express app  using command kubectl apply -f node-eks.yaml.
 
