@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: node-app
+  template:
+    metadata:
+      labels:
+        app: node-app
+    spec:
+      containers:
+      - name: node-app-container
+        image: public.ecr.aws/l7l7a2r1/images:node
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 4001  # Adjusted to the port your Node.js app listens on
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: node-app-service
+spec:
+  selector:
+    app: node-app
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 4001  # Adjusted to the port your Node.js app listens on
+  type: LoadBalancer
+
