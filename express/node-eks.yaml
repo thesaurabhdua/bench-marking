@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: node-app-container
-        image: public.ecr.aws/l7l7a2r1/images:node
+        image: public.ecr.aws/l7l7a2r1/images:nodenew1
         imagePullPolicy: Always
         ports:
         - containerPort: 4001  # Adjusted to the port your Node.js app listens on
@@ -28,7 +28,6 @@ spec:
     app: node-app
   ports:
     - protocol: TCP
-      port: 80
+      port: 4001
       targetPort: 4001  # Adjusted to the port your Node.js app listens on
   type: LoadBalancer
-
