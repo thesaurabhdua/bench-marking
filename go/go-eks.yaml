@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: go-app-container
-        image: public.ecr.aws/l7l7a2r1/images:go
+        image: public.ecr.aws/l7l7a2r1/images:gonew2
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
