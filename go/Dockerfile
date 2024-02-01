@@ -1,5 +1,5 @@
 # Use an official Go runtime as a parent image
-FROM golang:1.17-alpine
+FROM --platform=linux/amd64  golang:1.20
 
 # Set the working directory to your app directory
 WORKDIR /app
@@ -11,4 +11,4 @@ COPY . /app
 EXPOSE 8080
 
 # Command to run the Go application
-#CMD ["go", "run", "."]
+CMD ["go", "run", "."]
